@@ -1,0 +1,74 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.d-content{
+    padding: 60px;
+}
+
+.d-content h1 {
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-bottom: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #333;
+        font-family: sans-serif;
+    }
+
+.content .column {
+    text-align: center;
+    width:325px;
+    margin-right: 15px;
+    border: 1px solid;
+    border-color: white;
+    background-color: white;
+    padding: 0px;
+    padding-bottom: 30px;
+}
+
+
+
+h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    color: #444;
+}
+
+.description {
+    color: #1abc9c;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.d-main {
+    background-image: url('../design.svg');
+    background-size: contain;
+    height: 150vh;
+}
+
+.prod-img{
+    width: 100%;
+}
+
