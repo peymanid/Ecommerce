@@ -9,12 +9,44 @@
       "PackagePath": "staticwebassets\\1.jpeg"
     },
     {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\10.png",
+      "PackagePath": "staticwebassets\\10.png"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\11.png",
+      "PackagePath": "staticwebassets\\11.png"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\12.png",
+      "PackagePath": "staticwebassets\\12.png"
+    },
+    {
       "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\2.jpg",
       "PackagePath": "staticwebassets\\2.jpg"
     },
     {
       "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\3.jpg",
       "PackagePath": "staticwebassets\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\4.png",
+      "PackagePath": "staticwebassets\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\6.png",
+      "PackagePath": "staticwebassets\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\7.png",
+      "PackagePath": "staticwebassets\\7.png"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\8.png",
+      "PackagePath": "staticwebassets\\8.png"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\9.png",
+      "PackagePath": "staticwebassets\\9.png"
     },
     {
       "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\css\\site.css",
@@ -259,6 +291,14 @@
     {
       "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\rolex.jpg",
+      "PackagePath": "staticwebassets\\rolex.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Peyman\\source\\repos\\E-Commerce\\E-Commerce\\wwwroot\\tablet.jpg",
+      "PackagePath": "staticwebassets\\tablet.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.E-Commerce.Microsoft.AspNetCore.StaticWebAssets.props",

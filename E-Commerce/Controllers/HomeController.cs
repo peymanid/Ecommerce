@@ -1,11 +1,16 @@
 ﻿using E_Commerce.Database;
 using E_Commerce.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace E_Commerce.Controllers
 {
+
     public class HomeController : Controller
     {
         private DatabaseContext _context;
@@ -31,14 +36,15 @@ namespace E_Commerce.Controllers
         [HttpPost]
         public IActionResult Registration(Customer customer)
         {
-            
+
             var data = _context.Customers.FirstOrDefault(x => x.Email == customer.Email);
+
             if (data != null)
             {
                 //ModelState.AddModelError("Email", "This email is already in use.");
                 return RedirectToAction("SignUp", "Home");
             }
-            
+
             else
             {
                 _context.Customers.Add(new Customer
@@ -47,8 +53,6 @@ namespace E_Commerce.Controllers
                     Email = customer.Email,
                     Password = customer.Password,
                     PhoneNumber = customer.PhoneNumber,
-                    City = customer.City,
-                    ZipCode = customer.ZipCode,
                     Address = customer.Address,
                 });
 
@@ -57,20 +61,26 @@ namespace E_Commerce.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
         public IActionResult LogInAuth(Customer customer)
         {
-            var data =_context.Customers.FirstOrDefault(x=>x.Email == customer.Email && x.Password== customer.Password);
+
             
-            if(data!= null)
+            var data = _context.Customers
+                            .FirstOrDefault(x => x.Email == customer.Email && x.Password == customer.Password);
+
+            if (data != null)
             {
+                
                 return RedirectToAction("Index", "Product");
             }
             else
             {
+
                 return RedirectToAction("SignIn", "Home");
             }
-            
-            
+
         }
     }
 }
