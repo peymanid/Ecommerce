@@ -29,7 +29,7 @@ namespace E_Commerce.Controllers
         }
         public IActionResult LogOut()
         {
-            _globalStateService = null;
+            _globalStateService.userId = null;
             return RedirectToAction("Index");
         }
         public IActionResult AddToBasket(int id)

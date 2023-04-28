@@ -25,11 +25,11 @@ namespace E_Commerce.Controllers
             if (data != null)
             {
                 _globalStateService.userId = data.Id.ToString();
-                return RedirectToAction("Index", "Product");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
-                return RedirectToAction("SignIn", "Home");
+                return RedirectToAction("Index", "SignIn");
             }
 
         }
