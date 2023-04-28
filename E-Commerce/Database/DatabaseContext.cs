@@ -6,10 +6,7 @@ namespace E_Commerce.Database
     public class DatabaseContext: DbContext
 
     {
-        public DatabaseContext(DbContextOptions options) :base(options) 
-        {
-
-        }
+        public DatabaseContext(DbContextOptions options) :base(options) { }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get;set; }

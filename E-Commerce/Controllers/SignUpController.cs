@@ -19,7 +19,7 @@ namespace E_Commerce.Controllers
          {
                 return View();
          }
-        public IActionResult Registration(Customer customer)
+        public IActionResult Registration(Customer customer = null)
         {
             if (customer != null) { 
                 var data = _context.Customers.FirstOrDefault(x => x.Email == customer.Email);

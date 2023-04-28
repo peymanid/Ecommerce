@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dx1IInoaDmdEiJRdod+hzWIghAoC/y86M4spWmNY2I0=",
+  "Hash": "erQKq+SQ5ZXh40UqqJ84vbISwv0p08/YnNS0H089OrM=",
   "Source": "E-Commerce",
   "BasePath": "_content/E-Commerce",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\12.png"
+    },
+    {
+      "Identity": "C:\\Users\\xavie\\OneDrive\\Desktop\\New folder\\Ecommerce\\E-Commerce\\wwwroot\\13.png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\xavie\\OneDrive\\Desktop\\New folder\\Ecommerce\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "13.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\13.png"
     },
     {
       "Identity": "C:\\Users\\xavie\\OneDrive\\Desktop\\New folder\\Ecommerce\\E-Commerce\\wwwroot\\2.jpg",

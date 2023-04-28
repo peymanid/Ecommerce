@@ -1,12 +1,6 @@
 ﻿using E_Commerce.Database;
 using E_Commerce.Models;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Diagnostics;
-using System.Security.Claims;
 using E_Commerce.GlobalState;
 
 namespace E_Commerce.Controllers
@@ -40,11 +34,11 @@ namespace E_Commerce.Controllers
 
                 //Pass into basket
 
-                return RedirectToAction("Index", "Product");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
-                return RedirectToAction("SignIn", "Home");
+                return RedirectToAction("Index", "SignIn");
             }
         }
     }
