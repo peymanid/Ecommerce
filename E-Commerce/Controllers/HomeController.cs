@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Diagnostics;
 using System.Security.Claims;
+using E_Commerce.GlobalState;
 
 namespace E_Commerce.Controllers
 {
@@ -14,73 +15,37 @@ namespace E_Commerce.Controllers
     public class HomeController : Controller
     {
         private DatabaseContext _context;
-        public HomeController(DatabaseContext context)
+        private IGlobalStateService _globalStateService;
+        public HomeController(DatabaseContext context, IGlobalStateService globalStateService)
         {
             _context = context;
+            _globalStateService = globalStateService;
         }
         public IActionResult Index()
         {
-            return View();
+            var productLists = new List<Product>();
+            productLists = _context.Products.ToList();
+            return View(productLists);
         }
-
-        public IActionResult SignUp()
+        public IActionResult LogOut()
         {
-            return View();
+            _globalStateService = null;
+            return RedirectToAction("Index");
         }
-
-        public IActionResult SignIn()
+        public IActionResult AddToBasket(int id)
         {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Registration(Customer customer)
-        {
-
-            var data = _context.Customers.FirstOrDefault(x => x.Email == customer.Email);
-
-            if (data != null)
+            if (_globalStateService.userId != null)
             {
-                //ModelState.AddModelError("Email", "This email is already in use.");
-                return RedirectToAction("SignUp", "Home");
-            }
+                var product = _context.Products.FirstOrDefault(x => x.Id == id);
 
-            else
-            {
-                _context.Customers.Add(new Customer
-                {
-                    Name = customer.Name,
-                    Email = customer.Email,
-                    Password = customer.Password,
-                    PhoneNumber = customer.PhoneNumber,
-                    Address = customer.Address,
-                });
+                //Pass into basket
 
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction("Index", "Home");
-        }
-
-
-        public IActionResult LogInAuth(Customer customer)
-        {
-
-            
-            var data = _context.Customers
-                            .FirstOrDefault(x => x.Email == customer.Email && x.Password == customer.Password);
-
-            if (data != null)
-            {
-                
                 return RedirectToAction("Index", "Product");
             }
             else
             {
-
                 return RedirectToAction("SignIn", "Home");
             }
-
         }
     }
 }
