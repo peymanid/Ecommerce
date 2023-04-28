@@ -1,28 +1,58 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-<div class="d-main">
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
-        <a class="navbar-brand" href="#">Peyman Shop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-            </ul>
-            <div class="d-flex">
-                    <button class="btn bg-info btn-outline-info my-2 my-sm-0">Login</button>
-                    <button class="btn btn-outline-success my-2 my-sm-0">Sign up</button>
+﻿@model List<Product>
+
+<div class="d-flex position-relative">
+    <div class="nav-wrapper d-flex align-items-center justify-content-center position-sticky top-0">
+        <nav class="mynav d-flex flex-column align-items-center justify-content-lg-evenly">
+            <div>
+                <img class="link" width="20px" src="~/7.png" />
             </div>
-        </div>
-    </nav>
-
-
-    <div mt-5>
-        <p mt-5>test1</p>
-        <a asp-action="SignUp" asp-controller="Home">signUptest</a>
+            <div>
+                <img class="link" src="~/11.png" width="20px" />
+            </div>
+            <div>
+                <img class="link" src="~/12.png" width="20px" />
+            </div>
+            <div>
+                <img class="link" width="20px" src="~/9.png" />
+            </div>
+            <div>
+                <img class="link" width="20px" src="~/6.png" />
+            </div>
+            <div onclick="location.href='@Url.Action("LogOut", "Home")'">
+                <img class="link" width="20px" src="~/10.png" />
+            </div>
+            <div onclick="location.href='@Url.Action("Index", "SignIn")'">
+                <img class="link" width="20px" src="~/10.png" />
+            </div>
+        </nav>
     </div>
-</div>
-
-
-
-
-
+    <div class="container d-content p-5">
+        <div class="d-flex flex-wrap justify-content-center m-0 content">
+            @foreach (var item in Model)
+            {
+                <div class=" column  mb-5">
+                    <div style="width: 100%;">
+                        <figure class="figure">
+                            <img src="@item.Image" class="prod-img" />
+                        </figure>
+                        <div class="p-3 ">
+                            <h3>@item.Name</h3>
+                            <p class="description">@item.Description</p>
+                            <p class="Price">@item.Price$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <a href="#" class="btn btn-primary">
+                                        View Product
+                                    </a>
+                                </div>
+                                <i class="fa-solid fa-cart-shopping fa-lg svg"
+                                   onclick="location.href='@Url.Action("AddToBasket", "Product", new { id = item.Id })'"
+                                   style="cursor:pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>;
