@@ -3,4 +3,5 @@
 
 ### To run the app
   -First create a migration
+  
   -Update the database
