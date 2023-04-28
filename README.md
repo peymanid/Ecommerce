@@ -2,6 +2,8 @@
 ## Made with ASP.Net Core MVC and Entityframework
 
 ### To run the app
-  - First create a migration
+  - Create a migration
+      ` add-migration <MigrationName> `
   
   - Update the database
+      ` update-database `
