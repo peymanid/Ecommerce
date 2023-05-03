@@ -8,10 +8,10 @@
 <div class="wrapper">
     <section style="width:50vw;"
              class="  vh-100 d-flex justify-content-center align-items-center p-0">
-        <div class="w-75 bg-white" style=" border-radius: 15px;">
-            <section class="w-100">
-                <div class="w-100">
-                    <div class="row d-flex justify-content-center align-items-center p-lg-5">
+        <div class="form-container w-75 bg-white" style=" border-radius: 15px;">
+            <section class="w-100 h-100">
+                <div class="w-100 h-100">
+                    <div class="row d-flex justify-content-center align-items-center p-lg-5 h-100">
                         <div>
                             <div>
                                 <h1 style="color: #444;">Sign Up</h1>
@@ -19,8 +19,7 @@
                             <form asp-action="Registration"
                                   asp-controller="SignUp"
                                   method="post">
-                                <div class="divider d-flex align-items-center my-4"></div>
-                                <div class="form-outline mb-4">
+                                <div class="form-outline mb-2">
                                     <label class="form-label"
                                            for="form3Example3"
                                            style="margin-left: 0px;">
@@ -31,13 +30,9 @@
                                            id="form3Example3"
                                            class="form-control form-control-lg"
                                            placeholder="Email" />
-                                    <div class="form-notch">
-                                        <div class="form-notch-leading" style="width: 9px;"></div>
-                                        <div class="form-notch-middle" style="width: 88.8px;"></div>
-                                        <div class="form-notch-trailing"></div>
-                                    </div>
+                                    <span class="validation-msg" asp-validation-for="Email" ></span>
                                 </div>
-                                <div class="form-outline mb-3">
+                                <div class="form-outline mb-2">
                                     <label class="form-label"
                                            for="form3Example4"
                                            style="margin-left: 0px;">
@@ -48,13 +43,9 @@
                                            id="form3Example4"
                                            class="form-control form-control-lg"
                                            placeholder="Password" />
-                                    <div class="form-notch">
-                                        <div class="form-notch-leading" style="width: 9px;"></div>
-                                        <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                        <div class="form-notch-trailing"></div>
-                                    </div>
+                                    <span class="validation-msg" asp-validation-for="Password"></span>
                                 </div>
-                                <div class="form-outline mb-3">
+                                <div class="form-outline mb-2">
                                     <label class="form-label"
                                            for="form3Example4"
                                            style="margin-left: 0px;">
@@ -64,13 +55,9 @@
                                            id="form3Example4"
                                            class="form-control form-control-lg"
                                            placeholder="Phone" />
-                                    <div class="form-notch">
-                                        <div class="form-notch-leading" style="width: 9px;"></div>
-                                        <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                        <div class="form-notch-trailing"></div>
-                                    </div>
+                                    <span class="validation-msg" asp-validation-for="PhoneNumber"></span>
                                 </div>
-                                <div class="form-outline mb-3">
+                                <div class="form-outline mb-2">
                                     <label class="form-label"
                                            for="form3Example4"
                                            style="margin-left: 0px;">
@@ -80,11 +67,7 @@
                                            id="form3Example4"
                                            class="form-control form-control-lg"
                                            placeholder="Address " />
-                                    <div class="form-notch">
-                                        <div class="form-notch-leading" style="width: 9px;"></div>
-                                        <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                        <div class="form-notch-trailing"></div>
-                                    </div>
+                                    <span class="validation-msg" asp-validation-for="Address"></span>
                                 </div>
                                 <div class="text-center text-lg-start mt-4 pt-2">
                                     <button type="submit"

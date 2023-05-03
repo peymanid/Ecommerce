@@ -24,12 +24,12 @@ namespace E_Commerce.Controllers
             var data = _context.Customers.FirstOrDefault(x => x.Email == customer.Email && x.Password == customer.Password);
             if (data != null)
             {
-                _globalStateService.userId = data.Id.ToString();
+                _globalStateService.userId = data.CustomerId;
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                return RedirectToAction("Index", "SignIn");
+                return View("Index");
             }
 
         }

@@ -2,6 +2,6 @@
 {
     public class GlobalStateService : IGlobalStateService
     {
-            public string userId { get; set; }
+            public int? userId { get; set; }
     }
 }

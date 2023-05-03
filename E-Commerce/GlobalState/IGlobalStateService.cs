@@ -2,6 +2,6 @@
 {
         public interface IGlobalStateService
         {
-            string userId { get; set; }
+            int? userId { get; set; }
         }
 }

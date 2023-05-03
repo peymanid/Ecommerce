@@ -9,35 +9,35 @@ namespace E_Commerce.Controllers
     public class SignUpController : Controller
     {
         private DatabaseContext _context;
-        private IGlobalStateService _globalStateService;
-        public SignUpController(DatabaseContext context, IGlobalStateService globalStateService) 
+        public SignUpController(DatabaseContext context) 
         {
             _context = context;
-            _globalStateService = globalStateService;
         }
         public IActionResult Index()
          {
                 return View();
          }
-        public IActionResult Registration(Customer customer = null)
+        public IActionResult Registration(Customer customer)
         {
-            if (customer != null) { 
+            
+            if (ModelState.IsValid)
+            {
                 var data = _context.Customers.FirstOrDefault(x => x.Email == customer.Email);
                 if (data == null)
                 {
                     _context.Customers.Add(new Customer
-                {
-                    Name = customer.Name,
-                    Email = customer.Email,
-                    Password = customer.Password,
-                    PhoneNumber = customer.PhoneNumber,
-                    Address = customer.Address,
-                 });
+                    {
+                        Name = customer.Name,
+                        Email = customer.Email,
+                        Password = customer.Password,
+                        PhoneNumber = customer.PhoneNumber,
+                        Address = customer.Address,
+                    });
                     _context.SaveChanges();
                     return RedirectToAction("Index", "Home");
                 }
             }
-            return RedirectToAction("SignUp");
+            return View("Index");
         }
     }
 }

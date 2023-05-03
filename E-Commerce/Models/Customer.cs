@@ -1,17 +1,29 @@
-﻿namespace E_Commerce.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace E_Commerce.Models
 {
     public class Customer
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
+        [Key]
+        public int CustomerId { get; set; }
+
+        [Required(ErrorMessage = "Please enter your name")]
+        public string? Name { get; set; }
+
+        [Required(ErrorMessage = "Please enter your password")]
+        public string? Password { get; set; }
+
+        [Required(ErrorMessage = "Please enter your email address")]
+        [EmailAddress]
+        public string? Email { get; set; }
+
+        [Required(ErrorMessage = "Please enter your phone number")]
+        public string? PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Please enter your address")]
+        public string? Address { get; set; }
+
+        public ICollection<Order>? Orders { get; set; }
        
-
-        public ICollection<Order>Orders { get; set; }
-
-
     }
 }

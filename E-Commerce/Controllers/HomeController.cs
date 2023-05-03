@@ -2,10 +2,10 @@
 using E_Commerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using E_Commerce.GlobalState;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce.Controllers
 {
-
     public class HomeController : Controller
     {
         private DatabaseContext _context;
@@ -21,25 +21,43 @@ namespace E_Commerce.Controllers
             productLists = _context.Products.ToList();
             return View(productLists);
         }
+        public IActionResult Basket()
+        {
+            var custId = _globalStateService.userId;
+            var basketItems = _context.Baskets.Include(b => b.Product).Where(x => x.CustomerId == custId).ToList();
+            return View(basketItems);
+        }
         public IActionResult LogOut()
         {
             _globalStateService.userId = null;
             return RedirectToAction("Index");
         }
-        public IActionResult AddToBasket(int id)
+        public void AddToBasket(int id)
         {
             if (_globalStateService.userId != null)
             {
-                var product = _context.Products.FirstOrDefault(x => x.Id == id);
+                var custId = _globalStateService.userId;
 
-                //Pass into basket
-
-                return RedirectToAction("Index", "Home");
+                var basketItem = new Basket
+                {
+                    ProductId = id,
+                    CustomerId = (int)custId
+                };
+                var toBasket = _context.Baskets.Add(basketItem);
+                _context.SaveChanges();
             }
             else
             {
-                return RedirectToAction("Index", "SignIn");
+                RedirectToAction("Index", "SignIn");
             }
         }
+        public void RemoveFromBasket(int id)
+        {
+            var itemToRemove = _context.Baskets.Include(b => b.Product).FirstOrDefault(x => x.BasketId == id);
+            _context.Remove(itemToRemove);
+            _context.SaveChanges();
+
+        }
+
     }
 }

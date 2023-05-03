@@ -1,12 +1,14 @@
-﻿namespace E_Commerce.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace E_Commerce.Models
 {
     public class Order
     {
-        public int Id { get; set; }
+        [Key]
+        public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }
-        public decimal Total { get; set; }
-
-        public Customer Customer { get; set; }
-        public string CustomerId { get; set; }
+        public int CustomerId { get; set; }
+        public Customer? Customer { get; set; }
+        public ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }

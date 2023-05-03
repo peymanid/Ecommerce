@@ -142,3 +142,61 @@ body {
 .product-buttons{
     margin: 10px 0px;
 }
+.form-container{
+    height: 690px;
+}
+.validation-msg {
+    font-size: 10px;
+    color: red;
+    height: 10px;
+}
+
+/*Basket*/
+.basket-image{
+    width: 100px;
+    height: 100px;
+}
+.basket-prod-name{
+    font-weight: 600;
+       font-size: 20px;
+}
+.prod-price {
+    color: #939393;
+}
+.basket-remove{
+    cursor: pointer;
+    position: relative;
+}
+.basket-remove::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    bottom:20%;
+    right: 0%;
+    left: 98%;
+    background: #939393;
+}
+.main-items-container {
+    height: 90vh;
+    overflow: scroll;
+}
+.items-container {
+    height: fit-content;
+}
+.item-wrapper {
+    border-radius: 10px;
+    height: 150px;
+    overflow: hidden;
+}
+.total {
+    border-radius: 10px;
+}
+
+/*Product Page*/
+.product-figure {
+    height: 300px
+}
+.product-wrapper{
+    border-radius: 20px;
+}

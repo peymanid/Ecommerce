@@ -1,58 +1,40 @@
 ﻿@model List<Product>
 
 <div class="d-flex position-relative">
-    <div class="nav-wrapper d-flex align-items-center justify-content-center position-sticky top-0">
-        <nav class="mynav d-flex flex-column align-items-center justify-content-lg-evenly">
-            <div>
-                <img class="link" width="20px" src="~/7.png" />
-            </div>
-            <div>
-                <img class="link" src="~/11.png" width="20px" />
-            </div>
-            <div>
-                <img class="link" src="~/12.png" width="20px" />
-            </div>
-            <div>
-                <img class="link" width="20px" src="~/9.png" />
-            </div>
-            <div>
-                <img class="link" width="20px" src="~/6.png" />
-            </div>
-            <div  onclick="location.href='@Url.Action("LogOut", "Home")'">
-                <img class="link" width="20px" src="~/13.png" />
-            </div>
-            <div onclick="location.href='@Url.Action("Index", "SignIn")'">
-                <img class="link" width="20px" src="~/10.png" />
-            </div>
-        </nav>
-    </div>
+    @Html.Partial("~/Views/Home/Nav.cshtml")
     <div class="container d-content py-5">
         <div class="d-flex flex-wrap justify-content-center m-0 content">
             @foreach (var item in Model)
             {
+                @using (Html.BeginForm("AddToBasket", "Home", FormMethod.Post))
+                {
+                    @Html.Hidden("id", item.ProductId)
                 <div class="column d-flex flex-column justify-content-between">
                         <figure class="figure d-flex justify-content-center align-items-center">
-                            <img src="@item.Image" class="prod-img" />
+                            <img src="@item.ImageUrl" class="prod-img" />
                         </figure>
                         <div class="product-details p-3 w-100">
-                            <h3>@item.Name</h3>
+                            <h3>@item.Title</h3>
                         <div class="description">
-                                <p class="">@item.Description</p>
+                            <p class="">@item.MinDescription</p>
                             </div>
                                 <p class="Price">@item.Price$</p>
                             <div class="product-buttons d-flex justify-content-between align-items-center">
                                 <div>
-                                    <a href="#" class="btn btn-primary">
+                                    <a asp-action="Index" asp-controller="Product" asp-route-id="@item.ProductId" class="btn btn-primary">
                                         View Product
                                     </a>
                                 </div>
                                 <i class="fa-solid fa-cart-shopping fa-lg svg"
-                                   onclick="location.href='@Url.Action("AddToBasket", "Home", new { id = item.Id })'"
+                                   onclick="this.form.submit();"
                                    style="cursor:pointer"></i>
                             </div>
                         </div>
                 </div>
+                }
             }
         </div>
     </div>
+
+
 </div>

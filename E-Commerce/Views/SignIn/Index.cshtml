@@ -15,9 +15,9 @@
                              width="100%"
                              alt="Sample image" />
                     </div>
+
                     <div class="col-md-8 col-lg-6 col-xl-5 offset-xl-1">
                         <form asp-action="LogInAuth" asp-controller="SignIn" method="post">
-                            <div class="divider d-flex align-items-center my-4"></div>
                             <div class="form-outline mb-4">
                                 <label class="form-label"
                                        for="form3Example3"
@@ -29,12 +29,7 @@
                                        id="form3Example3"
                                        class="form-control form-control-lg"
                                        placeholder="Enter a valid email address" />
-
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 88.8px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
+                                <span class="validation-msg" asp-validation-for="Email"></span>
                             </div>
                             <div class="form-outline mb-3">
                                 <label class="form-label"
@@ -47,27 +42,8 @@
                                        id="form3Example4"
                                        class="form-control form-control-lg"
                                        placeholder="Enter password" />
+                                <span class="validation-msg" asp-validation-for="Password"></span>
 
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="form-check mb-0">
-                                    <input class="form-check-input me-2"
-                                           type="checkbox"
-                                           value=""
-                                           id="form2Example3" />
-                                    <label class="form-check-label" for="form2Example3">
-                                        Remember me
-                                    </label>
-                                </div>
-                                <a href="#!" class="text-body">
-                                    Forgot password?
-                                </a>
                             </div>
 
                             <div class="text-center text-lg-start mt-4 pt-2">
