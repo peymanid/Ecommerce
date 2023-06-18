@@ -27,7 +27,6 @@ namespace E_Commerce.Controllers
                 {
                     _context.Customers.Add(new Customer
                     {
-                        Name = customer.Name,
                         Email = customer.Email,
                         Password = customer.Password,
                         PhoneNumber = customer.PhoneNumber,

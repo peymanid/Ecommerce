@@ -3514,11 +3514,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xavie\\OneDrive\\Desktop\\New folder\\Ecommerce\\E-Commerce\\E-Commerce.csproj",
+      "projectUniqueName": "C:\\Users\\xavie\\OneDrive\\Desktop\\ASP Presentation\\Ecommerce\\E-Commerce\\E-Commerce.csproj",
       "projectName": "E-Commerce",
-      "projectPath": "C:\\Users\\xavie\\OneDrive\\Desktop\\New folder\\Ecommerce\\E-Commerce\\E-Commerce.csproj",
+      "projectPath": "C:\\Users\\xavie\\OneDrive\\Desktop\\ASP Presentation\\Ecommerce\\E-Commerce\\E-Commerce.csproj",
       "packagesPath": "C:\\Users\\xavie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xavie\\OneDrive\\Desktop\\New folder\\Ecommerce\\E-Commerce\\obj\\",
+      "outputPath": "C:\\Users\\xavie\\OneDrive\\Desktop\\ASP Presentation\\Ecommerce\\E-Commerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\xavie\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3528,7 +3528,9 @@
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -3576,7 +3578,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

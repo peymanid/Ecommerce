@@ -150,9 +150,14 @@ body {
     color: red;
     height: 10px;
 }
-
+.fa-cart-shopping{
+    border: none;
+}
+.fa-cart-shopping:hover{
+    background: none;
+}
 /*Basket*/
-.basket-image{
+.basket-image {
     width: 100px;
     height: 100px;
 }
@@ -166,6 +171,7 @@ body {
 .basket-remove{
     cursor: pointer;
     position: relative;
+    border: none;
 }
 .basket-remove::after {
     content: "";

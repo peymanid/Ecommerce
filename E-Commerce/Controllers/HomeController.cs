@@ -32,7 +32,9 @@ namespace E_Commerce.Controllers
             _globalStateService.userId = null;
             return RedirectToAction("Index");
         }
-        public void AddToBasket(int id)
+
+        [HttpPost]
+        public IActionResult AddToBasket(int id)
         {
             if (_globalStateService.userId != null)
             {
@@ -45,18 +47,21 @@ namespace E_Commerce.Controllers
                 };
                 var toBasket = _context.Baskets.Add(basketItem);
                 _context.SaveChanges();
+                return RedirectToAction("Index");
             }
             else
             {
-                RedirectToAction("Index", "SignIn");
+                return RedirectToAction("Index", "SignIn");
             }
         }
-        public void RemoveFromBasket(int id)
+
+        public IActionResult RemoveFromBasket(int id)
         {
-            var itemToRemove = _context.Baskets.Include(b => b.Product).FirstOrDefault(x => x.BasketId == id);
+            var itemToRemove = _context.Baskets.FirstOrDefault(x => x.BasketId == id);
             _context.Remove(itemToRemove);
             _context.SaveChanges();
 
+            return RedirectToAction("Basket", "Home");
         }
 
     }

@@ -6,20 +6,24 @@
         <div class="items-container d-flex flex-column ">
             @foreach(var i in Model)
             {
-                <div class="item-wrapper bg-white d-flex justify-content-start align-items-center w-100 my-2 p-2">
-                        <div class="basket-remove d-flex align-items-center justify-content-center p-3 h-100" onclick="Url.Action("RemoveFromBasket","Home", new{ id = i.BasketId}}">
-                 <p class="m-0">X</p>
-            </div>
-            <div class="d-flex justify-content-start items-center w-75 p-2">
-                <figure class="basket-image  d-flex justify-content-center align-items-center m-0">
-                    <img src="@i.Product.ImageUrl" width="90%" />
-                </figure>
-                <div class="p-2 d-flex flex-column justify-content-end align-items-start h-100 w-75">
-                    <p class="my-1 basket-prod-name">@i.Product.Title</p>
-                    <p class="my-1 prod-price"><span class="">-</span>$@i.Product.Price</p>
-                </div>
-            </div>
-        </div>
+                    @using (Html.BeginForm("RemoveFromBasket", "Home", FormMethod.Post, new { id = i.BasketId }))
+                    {
+                        @Html.Hidden("id", @i.BasketId)
+                        <div class="item-wrapper bg-white d-flex justify-content-start align-items-center w-100 my-2 p-2">
+                            <button type="submit" class="basket-remove d-flex align-items-center justify-content-center p-3 h-100">
+                                 <p class="m-0">X</p>
+                            </button>
+                            <div class="d-flex justify-content-start items-center w-75 p-2">
+                                <figure class="basket-image  d-flex justify-content-center align-items-center m-0">
+                                    <img src="@i.Product.ImageUrl" width="90%" />
+                                </figure>
+                                <div class="p-2 d-flex flex-column justify-content-end align-items-start h-100 w-75">
+                                    <p class="my-1 basket-prod-name">@i.Product.Title</p>
+                                    <p class="my-1 prod-price"><span class="">-</span>$@i.Product.Price</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
             }
          </div>
     </div>
