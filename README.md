@@ -1,4 +1,4 @@
-# Ecommerce site
+## Ecommerce site
 ## Made with ASP.Net Core MVC and Entityframework
 
 ### To run the app in dev
